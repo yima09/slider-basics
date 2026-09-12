@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Splide ドキュメント</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/themes/splide-skyblue.min.css"
+      crossorigin="anonymous"
+    />
+  </head>
+
+  <body>
+    <section class="splide" aria-label="Splideの基本的なHTML">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">Slide 01</li>
+          <li class="splide__slide">Slide 02</li>
+          <li class="splide__slide">Slide 03</li>
+        </ul>
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
+      integrity="sha256-FZsW7H2V5X9TGinSjjwYJ419Xka27I8XPDmWryGlWtw="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      new Splide('.splide').mount();
+    </script>
+  </body>
+</html>
