@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Splide ドキュメント</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      integrity="sha256-5uKiXEwbaQh9cgd2/5Vp6WmMnsUr3VZZw0a8rKnOKNU="
+      crossorigin="anonymous"
+    />
+
+    <style>
+      /* pagination に番号を振る */
+      .splide__pagination {
+        counter-reset: pagination-num;
+      }
+
+      .splide__pagination__page:before {
+        counter-increment: pagination-num;
+        content: counter(pagination-num);
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="splide" aria-label="Splideの基本的なHTML">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">Slide 01</li>
+          <li class="splide__slide">Slide 02</li>
+          <li class="splide__slide">Slide 03</li>
+          <li class="splide__slide">Slide 04</li>
+          <li class="splide__slide">Slide 05</li>
+          <li class="splide__slide">Slide 06</li>
+        </ul>
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
+      integrity="sha256-FZsW7H2V5X9TGinSjjwYJ419Xka27I8XPDmWryGlWtw="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      new Splide('.splide', {
+        // オプションなしの場合で、ページにスライド１枚表示の６pagination だった場合。
+        perPage: 3, // ここだけなら、スライド３表示２pagination。
+        focus: 0, // ここ追加で、スライド３表示６pagination(５と６スライドはページは動かない)
+        omitEnd: true, // ここ追加で、６スライド３表示１づつ移動４pagination(５・６でページが動かないのでなくなる)
+      }).mount();
+    </script>
+  </body>
+</html>
