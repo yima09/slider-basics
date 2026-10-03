@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Splide ドキュメント</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
+      integrity="sha256-5uKiXEwbaQh9cgd2/5Vp6WmMnsUr3VZZw0a8rKnOKNU="
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .splide__slide {
+        height: 10rem;
+        background-color: burlywood;
+      }
+
+      /* pagination */
+      .splide__pagination__page:focus-visible, /* :focus-visible をサポートしているブラウザ用 */
+      .splide.is-focus-in .splide__pagination__page:focus /* その他のブラウザ用フォールバック */ {
+        outline: 3px solid tomato;
+      }
+
+      /* arrow prev next(前後共通の場合 --prev next は不要) */
+      .splide__arrow--prev:focus-visible, /* :focus-visibleをサポートしているブラウザ用 */
+      .splide.is-focus-in .splide__arrow--prev:focus /* その他のブラウザ用フォールバック */ {
+        outline: 3px solid purple;
+      }
+
+      .splide__arrow--next:focus-visible, /* :focus-visibleをサポートしているブラウザ用 */
+      .splide.is-focus-in .splide__arrow--next:focus /* その他のブラウザ用フォールバック */ {
+        outline: 3px solid greenyellow;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section class="splide" aria-label="Splideの基本的なHTML">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide">Slide 01</li>
+          <li class="splide__slide">Slide 02</li>
+          <li class="splide__slide">Slide 03</li>
+        </ul>
+      </div>
+    </section>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
+      integrity="sha256-FZsW7H2V5X9TGinSjjwYJ419Xka27I8XPDmWryGlWtw="
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      new Splide('.splide').mount();
+    </script>
+  </body>
+</html>
